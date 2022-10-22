@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "tb_koch",
+            "cwd": "tb_koch",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tb_koch (profile mode)",
+            "cwd": "tb_koch",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tb_koch (release mode)",
+            "cwd": "tb_koch",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
