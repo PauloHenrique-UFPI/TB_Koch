@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:koch_app/app_controler.dart';
 
 import 'home_page.dart';
+import 'login_page.dart';
 
 class AppWidget extends StatelessWidget {
 
@@ -17,8 +18,13 @@ class AppWidget extends StatelessWidget {
           brightness: AppController.instance.temaDaAplicacao 
             ? Brightness.dark 
             : Brightness.light,
-          ),
-        home: HomePage(),
+        ),
+
+        initialRoute: '/home',
+        routes: {
+        '/': (context) => LoginPage(),
+        '/home': (context) => HomePage(),
+       },
       );
      },);
   }

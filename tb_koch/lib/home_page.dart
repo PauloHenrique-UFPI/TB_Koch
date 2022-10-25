@@ -20,8 +20,9 @@ class HomePageState extends State<HomePage> {
         'TB-Koch',
         style: TextStyle(fontSize: 16.0, color: Color.fromARGB(255, 26, 25, 25)),),
       
-      actions: [
-        Customizavel(),
+      actions: <Widget>[
+        IconButton(icon: Icon(Icons.supervised_user_circle_outlined), onPressed: () {}),
+        //Customizavel(),
       ],
 
     ),
@@ -33,8 +34,7 @@ class HomePageState extends State<HomePage> {
 
       child:  Column(
         children: [
-          Text('Teste'),
-          Customizavel(),
+          Text('HOME PAGE'),
 
         ],
         
