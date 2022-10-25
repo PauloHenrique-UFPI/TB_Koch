@@ -12,7 +12,7 @@ class BlockButton extends StatelessWidget {
     primary: Color.fromARGB(255, 219, 56, 56),
     textStyle: const TextStyle(fontSize: 18),
     padding: const EdgeInsets.all(15),
-    
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
   );
 
   BlockButton({
@@ -31,6 +31,7 @@ class BlockButton extends StatelessWidget {
       icon: Icon(icon),
       label: Text(label),
       onPressed: onPressed,
+
     ),
 
    );

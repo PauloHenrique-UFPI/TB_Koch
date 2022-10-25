@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:koch_app/app_appbar.dart';
 import 'package:koch_app/app_controler.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,17 +16,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
    return Scaffold(
     //Aqui e a HOME-BAR
-    appBar: AppBar(
-      title: Text(
-        'TB-Koch',
-        style: TextStyle(fontSize: 16.0, color: Color.fromARGB(255, 26, 25, 25)),),
-      
-      actions: <Widget>[
-        IconButton(icon: Icon(Icons.supervised_user_circle_outlined), onPressed: () {}),
-        //Customizavel(),
-      ],
-
-    ),
+    appBar: compAppBar(),
 
     //AQUI E O BODY DA APLICAÇÂO
     body: Container( 
@@ -37,7 +28,7 @@ class HomePageState extends State<HomePage> {
           Text('HOME PAGE'),
 
         ],
-        
+    
       ),
       ),
     

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:koch_app/app_appbar.dart';
 import 'package:koch_app/block_button.dart';
 import 'package:koch_app/home_page.dart';
 import 'home_page.dart';
@@ -70,7 +71,8 @@ class _LoginPageState extends State<LoginPage> {
                 
                 SizedBox(height: 15,),
 
-
+                compAppBar(),
+                
                 BlockButton(
                   icon: Icons.add_to_home_screen, 
                   label: 'Entrar', 
@@ -80,8 +82,6 @@ class _LoginPageState extends State<LoginPage> {
                     } else {
                         print('Login invalido');
                     }
-                    
-
                 }),
               ]
               ),
