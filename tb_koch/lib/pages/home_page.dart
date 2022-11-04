@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:koch_app/app_appbar.dart';
-import 'package:koch_app/app_controler.dart';
+import 'package:koch_app/componentization/app_appbar.dart';
+import 'package:koch_app/componentization/app_controler.dart';
+import 'package:koch_app/componentization/block_button.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,6 +19,7 @@ class HomePageState extends State<HomePage> {
     //Aqui e a HOME-BAR
     appBar: compAppBar(),
 
+
     //AQUI E O BODY DA APLICAÇÂO
     body: Container( 
       width: double.infinity,
@@ -25,12 +27,36 @@ class HomePageState extends State<HomePage> {
 
       child:  Column(
         children: [
-          Text('HOME PAGE'),
+          Container(
+                  height: 50,
+                  child: Text('Mural de Avisos',  style: TextStyle(fontSize: 20.0,  color: Color.fromARGB(255, 14, 13, 13)),),
+                ),
 
+          Container(
+                  child: Image.asset("assets/images/img1.png"),
+                ),
+          
+          
+          Container(
+                width: 300,
+                  child: Text('A Secretaria Municipal de Saúde realiza  campanha de intensificação  de  busca   ativa   de casos de tuberculose  entre os dias 15 a 29 deste mês.',  style: TextStyle(fontSize: 15.0,  color: Color.fromARGB(255, 14, 13, 13)),),
+                ),
+          
+          
+           BlockButton(
+                  icon: Icons.mobile_screen_share_outlined, 
+                  label: 'Ler Mais', 
+                  probutton: 150,
+                  onPressed: () {},
+           ),
+
+            
         ],
     
       ),
-      ),
+    ),
+
+    bottomNavigationBar: navbar(),
     
   
   );

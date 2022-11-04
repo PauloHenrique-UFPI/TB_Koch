@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:koch_app/app_appbar.dart';
-import 'package:koch_app/block_button.dart';
-import 'package:koch_app/home_page.dart';
+import 'package:koch_app/componentization/app_appbar.dart';
+import 'package:koch_app/componentization/block_button.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -71,11 +70,11 @@ class _LoginPageState extends State<LoginPage> {
                 
                 SizedBox(height: 15,),
 
-                compAppBar(),
                 
                 BlockButton(
                   icon: Icons.add_to_home_screen, 
                   label: 'Entrar', 
+                  probutton: 300,
                   onPressed: () {
                     if( email == 'teste@gmail.com' && password == '123'){
                       Navigator.of(context).pushReplacementNamed('/home');

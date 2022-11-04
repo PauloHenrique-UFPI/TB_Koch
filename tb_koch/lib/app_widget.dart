@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:koch_app/app_controler.dart';
+import 'package:koch_app/componentization/app_controler.dart';
 
-import 'home_page.dart';
-import 'login_page.dart';
-import 'profile_page.dart';
+import 'package:koch_app/pages/home_page.dart';
+import 'package:koch_app/pages/login_page.dart';
+import 'package:koch_app/pages/paciente_page.dart';
+import 'package:koch_app/pages/profile_page.dart';
 
 class AppWidget extends StatelessWidget {
 
@@ -21,11 +22,12 @@ class AppWidget extends StatelessWidget {
             : Brightness.light,
         ),
 
-        initialRoute: '/profile',
+        initialRoute: '/pacientes',
         routes: {
         '/': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/profile': (context) => ProfilePage(),
+        '/pacientes':(context) => PacientePage(),
        },
       );
      },);

@@ -6,6 +6,7 @@ class BlockButton extends StatelessWidget {
 
   final IconData icon;
   final String label;
+  final double probutton;
   final Function()? onPressed;
 
   final ButtonStyle = ElevatedButton.styleFrom(
@@ -19,13 +20,14 @@ class BlockButton extends StatelessWidget {
     Key? key, 
     required this.icon, 
     required this.label, 
+    required this.probutton,
     required this.onPressed
     }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
    return SizedBox(
-    width: 300,
+    width: probutton,
     child: ElevatedButton.icon(
       style: ButtonStyle,
       icon: Icon(icon),
@@ -39,3 +41,4 @@ class BlockButton extends StatelessWidget {
   }
 
 }
+
