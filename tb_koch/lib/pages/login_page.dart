@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:koch_app/componentization/app_appbar.dart';
 import 'package:koch_app/componentization/block_button.dart';
+import 'package:koch_app/named_routes.dart';
 import 'home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -77,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                   probutton: 300,
                   onPressed: () {
                     if( email == 'teste@gmail.com' && password == '123'){
-                      Navigator.of(context).pushReplacementNamed('/home');
+                      Navigator.pushNamed(context, RootViewRoute);
                     } else {
                         print('Login invalido');
                     }

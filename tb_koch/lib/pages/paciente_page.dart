@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:koch_app/componentization/app_appbar.dart';
+import 'package:koch_app/componentization/cached_image.dart';
+import 'package:koch_app/named_routes.dart';
 import 'package:koch_app/repositories/paciente_repository.dart';
 
 class PacientePage extends StatefulWidget {
@@ -15,30 +17,36 @@ class PacientePageState extends State<PacientePage> {
     final tabela = PacienteRepository.tabela;
     
     return Scaffold(
-    //Aqui e a HOME-BAR
-    appBar: compAppBar(),
-
     //AQUI E O BODY DA APLICAÇÂO
     body: ListView.separated(
       itemBuilder: (BuildContext context, int paciente){
-        return ListTile(
-          leading: Padding(
-            padding: EdgeInsets.all(10), 
-            child: Image.asset(tabela[paciente].icone),
+        return Card(
+          elevation: 5.0,
+          margin: const EdgeInsets.all(8.0),
+          child: Padding(
+            padding: const EdgeInsets.all(2),
+            child: Column(
+              children: <Widget> [
+                ListTile(
+                  leading: CachedImage(imageUrl: 'https://www.gov.br/planalto/pt-br/assuntos/assuntos-estrategicos/institucional/curriculos/avatar2.jpg/@@images/image',circle: true,),
+                  title: Text(tabela[paciente].nome),
+                  trailing: ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, FichaViewRoute, arguments: {
+                          'id': 1,//mudar aqui para ser o id de cada paciente
+                        });
+                      },
+                      child: Text('FICHA')),
+                ),
+                
+              ]),
           ),
-          title: Text(tabela[paciente].nome),
-          trailing: Text(tabela[paciente].sigla),
         );
       },
-      padding: EdgeInsets.all(16),
+      
       separatorBuilder: (BuildContext context, int paciente) => const Divider(),
       itemCount: tabela.length,
     ),
-
-
-    bottomNavigationBar: navbar(),
-    
-  
   );
   }
 }

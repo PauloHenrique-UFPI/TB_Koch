@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatefulWidget {
+class ContatoPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return ProfilePageState();
+    return ContatoPageState();
   }
 }
 
-class ProfilePageState extends State<ProfilePage> {
+class ContatoPageState extends State<ContatoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Tela de perfil'),
+      body: Text('Tela de Contato'),
     );
   }
 }

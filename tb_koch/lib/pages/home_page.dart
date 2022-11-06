@@ -16,10 +16,6 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
    return Scaffold(
-    //Aqui e a HOME-BAR
-    appBar: compAppBar(),
-
-
     //AQUI E O BODY DA APLICAÇÂO
     body: Container( 
       width: double.infinity,
@@ -54,11 +50,7 @@ class HomePageState extends State<HomePage> {
         ],
     
       ),
-    ),
-
-    bottomNavigationBar: navbar(),
-    
-  
+    ),    
   );
   }
 

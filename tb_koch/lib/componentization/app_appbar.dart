@@ -14,8 +14,10 @@ AppBar compAppBar() {
   );
 }
 
+
 BottomNavigationBar navbar() {
-  return BottomNavigationBar(items: const [
+  return BottomNavigationBar(
+    items: const [
     BottomNavigationBarItem(
       icon: Icon(Icons.people),
       label: "Contatos",
