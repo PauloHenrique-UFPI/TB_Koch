@@ -28,12 +28,12 @@ class PacientePageState extends State<PacientePage> {
             child: Column(
               children: <Widget> [
                 ListTile(
-                  leading: CachedImage(imageUrl: 'https://www.gov.br/planalto/pt-br/assuntos/assuntos-estrategicos/institucional/curriculos/avatar2.jpg/@@images/image',circle: true,),
+                  leading: CachedImage(imageUrl: tabela[paciente].icone,circle: true,),
                   title: Text(tabela[paciente].nome),
                   trailing: ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, FichaViewRoute, arguments: {
-                          'id': 1,//mudar aqui para ser o id de cada paciente
+                          'id': tabela[paciente].id,//mudar aqui para ser o id de cada paciente
                         });
                       },
                       child: Text('FICHA')),

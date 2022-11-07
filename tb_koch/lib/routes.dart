@@ -22,7 +22,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     case FichaViewRoute:
       return MaterialPageRoute(builder: (context) => FichaPage(
-        id: (arguments as Map<String, dynamic>)['id'],)); // define que o 'argumentes' e um Mapa onde eu pego o campo 'id' (posso mudar depois)
+        id: (arguments as Map<String, dynamic>)['id'],)); // define que o 'arguments' e um Mapa onde eu pego o campo 'id' (posso mudar depois)
    
     default:
       return MaterialPageRoute(builder: (context) => Root());

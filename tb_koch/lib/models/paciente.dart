@@ -1,4 +1,5 @@
 class Paciente {
+  int id;
   String icone;
   String nome;
   String? numero;
@@ -6,7 +7,8 @@ class Paciente {
   String sigla;
 
 Paciente({
-  this.icone = 'assets/images/user.jpg',
+  required this.id,
+  this.icone = 'https://www.gov.br/planalto/pt-br/assuntos/assuntos-estrategicos/institucional/curriculos/avatar2.jpg/@@images/image',
   required this.nome,
   this.numero,
   this.endereco,
