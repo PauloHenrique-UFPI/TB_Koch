@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:koch_app/named_routes.dart';
 
 import 'package:koch_app/pages/contatos_page.dart';
 import 'package:koch_app/pages/home_page.dart';
@@ -37,10 +38,20 @@ class _RootState extends State<Root>{
             'TB-Koch',
             style: TextStyle(fontSize: 16.0, color: Color.fromARGB(255, 26, 25, 25)),),
           
-          actions: <Widget>[
-            IconButton(icon: Icon(Icons.supervised_user_circle_outlined), onPressed: () {}),
-            //Customizavel(),
-          ],
+         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.supervised_user_circle_outlined),
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                ProfileViewRoute,
+                arguments: {
+                  'id': 1,
+                },
+              );
+            },
+          ),
+        ],
         ),
 
       body: _children[_currentIndex],

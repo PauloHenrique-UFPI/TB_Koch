@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:koch_app/componentization/app_appbar.dart';
 import 'package:koch_app/models/paciente.dart';
+import 'package:koch_app/named_routes.dart';
 import 'package:koch_app/repositories/paciente_repository.dart';
 
 class FichaPage extends StatelessWidget {
@@ -130,7 +131,26 @@ class FichaPage extends StatelessWidget {
       );
 
     return Scaffold(
-      appBar: compAppBar(),
+      appBar: AppBar(
+        title: Text(
+            'TB-Koch',
+            style: TextStyle(fontSize: 16.0, color: Color.fromARGB(255, 26, 25, 25)),),
+          
+         actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.supervised_user_circle_outlined),
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                ProfileViewRoute,
+                arguments: {
+                  'id': 1,
+                },
+              );
+            },
+          ),
+        ],
+        ),
       body: body,
     );
   }

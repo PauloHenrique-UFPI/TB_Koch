@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koch_app/named_routes.dart';
+import 'package:koch_app/pages/fichaContato_page.dart';
 import 'package:koch_app/pages/fichaPaciente_page.dart';
 
 import 'package:koch_app/pages/login_page.dart';
@@ -19,6 +20,18 @@ Route<dynamic> generateRoute(RouteSettings settings) {
 
     case ProfileViewRoute:
       return MaterialPageRoute(builder: (context) => ProfilePage());
+
+    case ContatoViewRoute:
+      return MaterialPageRoute(
+          builder: (context) => ContatoViewPage(
+                id: (arguments as Map<String, dynamic>)['id'],
+              ));
+
+    case ProfileViewRoute:
+      return MaterialPageRoute(
+          builder: (context) => ProfilePage(
+                id: (arguments as Map<String, dynamic>)['id'],
+              ));
 
     case FichaViewRoute:
       return MaterialPageRoute(builder: (context) => FichaPage(
