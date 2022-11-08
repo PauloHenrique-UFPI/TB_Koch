@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:koch_app/componentization/app_appbar.dart';
 import 'package:koch_app/models/paciente.dart';
 import 'package:koch_app/repositories/paciente_repository.dart';
@@ -101,6 +102,18 @@ class FichaPage extends StatelessWidget {
               children: [
                 Text('Anexe o Teste', style: Theme.of(context).textTheme.headline6,),
                 Padding(padding: EdgeInsets.all(10)),
+                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    
+                    Text('Imagem para Exame:   ',textAlign: TextAlign.center,),
+                    FloatingActionButton(
+                    child: Icon(Icons.add_a_photo_outlined)
+                    ,onPressed: () => getGaleria()),
+                  ]
+                ),
+                
               ]),
           ),
           )
@@ -121,5 +134,16 @@ class FichaPage extends StatelessWidget {
       body: body,
     );
   }
+
+
+  getGaleria() async {
+    
+    final ImagePicker _picker = ImagePicker();
+    // Pick an image
+    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    
+  }
+
+  
 }
 
