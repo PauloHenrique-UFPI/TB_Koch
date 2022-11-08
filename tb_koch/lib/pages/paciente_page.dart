@@ -50,3 +50,43 @@ class PacientePageState extends State<PacientePage> {
   );
   }
 }
+
+
+/*
+
+UM BELO BOTAO DE BUSCA
+
+
+ Padding(padding: EdgeInsets.only(top: 10),
+          child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Color.fromARGB(255, 199, 214, 223),
+                    ),
+
+                    child: TextField(
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+
+                      decoration: InputDecoration(
+                        fillColor: Color.fromARGB(255, 199, 25, 25),
+                        contentPadding: EdgeInsets.only(
+                          left: 20, top: 15, right: 20, bottom: 15,
+                        ), 
+
+                        prefixIcon: Padding(
+                          padding: EdgeInsets.only(left: 15,right: 15),
+                          child: CircleAvatar(
+                            child: Icon(Icons.search),
+                          )
+                        ),
+                        hintText: "Pesquisar Paciente"
+                      ),
+                    ),
+                  ),   
+                ),
+
+
+*/
