@@ -15,39 +15,126 @@ class PacientePageState extends State<PacientePage> {
   @override
   Widget build(BuildContext context) {
     final tabela = PacienteRepository.tabela;
-    
+
     return Scaffold(
-    //AQUI E O BODY DA APLICAÇÂO
-    body: ListView.separated(
-      itemBuilder: (BuildContext context, int paciente){
-        return Card(
-          elevation: 5.0,
-          margin: const EdgeInsets.all(8.0),
-          child: Padding(
-            padding: const EdgeInsets.all(2),
-            child: Column(
-              children: <Widget> [
+      appBar: AppBar(title: const Text(''), actions: [
+        IconButton(
+          onPressed: () {
+            showSearch(
+              context: context,
+              delegate: CustomSearchDelegate(),
+            );
+          },
+          icon: const Icon(Icons.search),
+        ),
+      ]),
+      //AQUI E O BODY DA APLICAÇÂO
+      body: ListView.separated(
+        itemBuilder: (BuildContext context, int paciente) {
+          return Card(
+            elevation: 5.0,
+            margin: const EdgeInsets.all(8.0),
+            child: Padding(
+              padding: const EdgeInsets.all(2),
+              child: Column(children: <Widget>[
                 ListTile(
-                  leading: CachedImage(imageUrl: tabela[paciente].icone,circle: true,),
+                  leading: CachedImage(
+                    imageUrl: tabela[paciente].icone,
+                    circle: true,
+                  ),
                   title: Text(tabela[paciente].nome),
                   trailing: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, FichaViewRoute, arguments: {
-                          'id': tabela[paciente].id,//mudar aqui para ser o id de cada paciente
-                        });
+                        Navigator.pushNamed(context, FichaViewRoute,
+                            arguments: {
+                              'id': tabela[paciente]
+                                  .id, //mudar aqui para ser o id de cada paciente
+                            });
                       },
-                      child: Text('FICHA')),
+                      child: const Text('FICHA')),
                 ),
-                
               ]),
-          ),
+            ),
+          );
+        },
+        separatorBuilder: (BuildContext context, int paciente) =>
+            const Divider(),
+        itemCount: tabela.length,
+      ),
+    );
+  }
+}
+
+class CustomSearchDelegate extends SearchDelegate {
+  List<String> searchTerms = [
+    'Apple',
+    'Banana',
+    'Pear',
+    'Watermelons',
+    'Oranges',
+    'Blueberries',
+    'Strawberries',
+    'Raspberries',
+  ];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: const Icon(Icons.clear),
+        onPressed: () {
+          query = '';
+        },
+      ),
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: const Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    List<String> matchQuerry = [];
+    for (var fruit in searchTerms) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
+        matchQuerry.add(fruit);
+      }
+    }
+    return ListView.builder(
+      itemCount: matchQuerry.length,
+      itemBuilder: (context, index) {
+        var result = matchQuerry[index];
+        return ListTile(
+          title: Text(result),
         );
       },
-      
-      separatorBuilder: (BuildContext context, int paciente) => const Divider(),
-      itemCount: tabela.length,
-    ),
-  );
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var fruit in searchTerms) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+      }
+    }
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+    );
   }
 }
 
