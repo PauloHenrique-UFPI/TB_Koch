@@ -24,31 +24,31 @@ class ContatoViewPage extends StatelessWidget {
                 imageUrl: '${ct.profilePicture}',
                 progressIndicatorBuilder: (context, url, downloadProgress) =>
                     CircularProgressIndicator(value: downloadProgress.progress),
-                errorWidget: (context, url, error) => Icon(Icons.error),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
               Text(
                 ct.nome,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
               ),
               Text('${ct.numero}',
-                  style:
-                      TextStyle(fontWeight: FontWeight.normal, fontSize: 23)),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.normal, fontSize: 23)),
               Text(ct.profissao,
-                  style:
-                      TextStyle(fontWeight: FontWeight.normal, fontSize: 23)),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.normal, fontSize: 23)),
               Text(ct.email,
-                  style:
-                      TextStyle(fontWeight: FontWeight.normal, fontSize: 23)),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.normal, fontSize: 23)),
             ],
           ))
         : Center(
-            child: const Text('Contato nÃ£o encontrado no Banco de Dados!'),
+            child: const Text('Contato não encontrado no Banco de Dados!'),
           );
 
     return Scaffold(
       appBar: compAppBar(),
       body: body,
-      bottomNavigationBar: navbar(),
     );
   }
 }

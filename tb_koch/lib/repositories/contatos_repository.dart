@@ -11,7 +11,7 @@ class ContatoRepository {
     ),
     Contato(
       id: 2,
-      nome: 'Andre JosÃ©',
+      nome: 'Andre João',
       numero: '120319023',
       profissao: 'Agente de saude',
       email: 'andrejose@gmail.com',

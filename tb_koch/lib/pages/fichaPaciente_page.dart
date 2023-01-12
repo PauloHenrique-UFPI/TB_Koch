@@ -63,7 +63,7 @@ class FichaPage extends StatelessWidget {
                       Text('Sigla Regional:', style: _style()),
                       Text('${pct.sigla}'),
                       const SizedBox(
-                        height: 50,
+                        height: 20,
                       ),
                       const Text(
                         "Para acessar o prontuario clique no botão abaixo: ",
@@ -71,7 +71,7 @@ class FichaPage extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       ElevatedButton(
                         style: TextButton.styleFrom(

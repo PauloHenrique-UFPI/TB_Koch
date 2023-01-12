@@ -15,5 +15,7 @@ Paciente({
   required this.sigla,
 });
 
+  toLowerCase() {}
+
 }
 
