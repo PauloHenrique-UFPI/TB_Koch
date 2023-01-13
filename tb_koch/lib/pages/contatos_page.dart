@@ -22,30 +22,31 @@ class ContatoPageState extends State<ContatoPage> {
       //AQUI E O BODY DA APLICAÇÂO
       body: ListView.separated(
         itemBuilder: (BuildContext context, int contato) {
-          return Card(
-            elevation: 5.0,
-            margin: const EdgeInsets.all(10.0),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(children: <Widget>[
-                ListTile(
-                  leading: CachedImage(
-                    imageUrl:
-                        'https://www.gov.br/planalto/pt-br/assuntos/assuntos-estrategicos/institucional/curriculos/avatar2.jpg/@@images/image',
-                    circle: true,
+          return 
+          GestureDetector(
+            onTap: () => {
+                          Navigator.pushNamed(context, ContatoViewRoute,
+                              arguments: {
+                                'id': tabela[contato]
+                                    .id, //mudar aqui para ser o id de cada contato
+                              })
+                        },
+            child: Card(
+              elevation: 5.0,
+              margin: const EdgeInsets.all(10.0),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(children: <Widget>[
+                  ListTile(
+                    leading: CachedImage(
+                      imageUrl:
+                          'https://www.gov.br/planalto/pt-br/assuntos/assuntos-estrategicos/institucional/curriculos/avatar2.jpg/@@images/image',
+                      circle: true,
+                    ),
+                    title: Text(tabela[contato].nome),
                   ),
-                  title: Text(tabela[contato].nome),
-                  trailing: ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, ContatoViewRoute,
-                            arguments: {
-                              'id': tabela[contato]
-                                  .id, //mudar aqui para ser o id de cada contato
-                            });
-                      },
-                      child: Icon(Icons.more_vert)),
-                ),
-              ]),
+                ]),
+              ),
             ),
           );
         },
